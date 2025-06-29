@@ -1,0 +1,52 @@
+/* Importar una fuente de Google Fonts para un mejor aspecto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+}
+
+main {
+  padding: 15px;
+}
+
+.continue-button-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    position: sticky; /* Se queda fijo al hacer scroll */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.continue-button {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #dc3545; /* Rojo de tu logo */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.continue-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.continue-button:not(:disabled):hover {
+    background-color: #c82333;
+}
