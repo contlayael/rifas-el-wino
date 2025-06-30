@@ -1,27 +1,49 @@
 .ticket {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  /* Estado por defecto: Boleto Disponible */
+  background-color: var(--surface-dark); /* Usamos el gris oscuro de superficie */
+  border: 1px solid var(--border-color); /* Un borde sutil para definirlo */
+  color: var(--text-light); /* Texto en color claro, fácil de leer */
   border-radius: 8px;
   padding: 15px 5px;
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, transform 0.2s;
-  user-select: none; /* Evita la selección de texto */
+  transition: background-color 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
+  user-select: none;
 }
 
 .ticket:hover {
-  background-color: #e0e0e0;
+  /* Efecto al pasar el mouse sobre un boleto disponible */
+  background-color: #333333; /* Un gris un poco más claro */
+  border-color: var(--primary-gold); /* El borde se ilumina en dorado */
   transform: scale(1.05);
 }
 
 .ticket.selected {
-  background-color: #28a745; /* Verde de éxito */
-  color: white;
-  border-color: #218838;
+  /* Estado: Boleto Seleccionado por el usuario */
+  background-color: var(--primary-red); /* Usamos el rojo principal, muy llamativo */
+  color: var(--text-light); /* Texto en blanco para máximo contraste */
+  border-color: #ff4d4d; /* Un borde rojo más brillante */
+  transform: scale(1.1); /* Lo hacemos un poco más grande para que resalte */
 }
 
 .ticket.selected:hover {
-    background-color: #218838;
+    background-color: #c82333; /* Un rojo un poco más oscuro al pasar el mouse */
+}
+
+.ticket.sold {
+  /* Estado: Boleto ya Vendido (el que marcará el admin) */
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo muy oscuro, casi transparente */
+  color: #555; /* Texto gris muy oscuro, apenas legible */
+  border-color: #333;
+  cursor: not-allowed;
+  text-decoration: line-through; /* Texto tachado para indicar que no está disponible */
+}
+
+.ticket.sold:hover {
+    /* Sin efectos al pasar el mouse para reforzar que no es interactivo */
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: #333;
 }

@@ -1,9 +1,29 @@
-/* Importar una fuente de Google Fonts para un mejor aspecto */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* 1. Importamos las dos fuentes que usaremos: Oswald para títulos y Roboto para el resto */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;500&display=swap');
 
+/* 2. Definimos nuestra paleta de colores en :root para poder usarla en toda la web */
+:root {
+  --background-dark: #141414; /* Un negro no tan puro, más suave a la vista */
+  --surface-dark: #222222;   /* Un gris oscuro para fondos de secciones */
+  --primary-red: #dc3545;      /* El rojo de tu logo para botones de acción */
+  --primary-gold: #ffb400;     /* Dorado para premios y textos importantes */
+  --text-light: #f5f5f5;      /* Un blanco no tan brillante para texto */
+  --text-secondary: #a0a0a0;  /* Gris claro para texto secundario */
+  --border-color: #333333;
+}
+
+/* 3. Aplicamos los estilos base al body */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: var(--background-dark); /* Usamos nuestra variable de fondo */
+  color: var(--text-light); /* Usamos nuestra variable de texto principal */
+  transition: background-color 0.3s ease;
+}
+
+/* 4. Damos un estilo base a los títulos para que usen la fuente de impacto */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }

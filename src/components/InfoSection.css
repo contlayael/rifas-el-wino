@@ -1,0 +1,55 @@
+.info-section {
+  background-color: var(--surface-dark);
+  padding: 40px 20px;
+}
+
+.info-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid var(--primary-gold);
+  border-radius: 10px;
+  padding: 30px;
+  background-color: var(--background-dark);
+}
+
+.date-highlight {
+  color: var(--primary-gold);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bonus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bonus-list li {
+  background-color: var(--surface-dark);
+  border-left: 5px solid var(--primary-red);
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 0 8px 8px 0;
+}
+
+.bonus-list li p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.bonus-list li span {
+  font-weight: 700;
+  color: var(--text-light);
+  display: block; /* Para que el emoji y el texto estén en una línea */
+  margin-bottom: 5px;
+}
+
+.final-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-gold);
+  margin-top: 30px;
+}
