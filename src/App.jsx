@@ -1,10 +1,9 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './pages/HomePage'; // Asegúrate que la ruta sea correcta
 // import AdminPanel from './pages/AdminPanel'; // La usaremos en el futuro
 
-import './App.css';
+import './app.css';
 
 function App() {
   return (
