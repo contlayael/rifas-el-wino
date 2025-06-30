@@ -1,12 +1,30 @@
+/* src/components/Header.css */
+
 .app-header {
-  background-color: #ffffff;
-  padding: 10px 20px;
+  /* Usamos el color de fondo principal */
+  background-color: var(--background-dark); 
+  padding: 15px 20px;
   text-align: center;
-  border-bottom: 2px solid #f0f0f0;
+  /* Un borde inferior sutil para separarlo del contenido */
+  border-bottom: 1px solid var(--border-color); 
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 120px; /* Hacemos el logo un poco más pequeño para un look más limpio */
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+/* Nota sobre el logo: Como tu imagen de logo tiene un fondo blanco, 
+   lo ideal sería editar la imagen para que tenga fondo transparente. 
+   Así se integrará perfectamente con cualquier color de fondo. */
+
+.app-header h1 {
+  /* Estilo para el título "Rifas El Wino" */
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-light); /* Texto en color claro */
+  letter-spacing: 2px;
 }

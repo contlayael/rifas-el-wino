@@ -1,24 +1,28 @@
+/* src/components/BookingModal.css */
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8); /* Hacemos el fondo un poco más oscuro */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 15px; /* Espacio para que no pegue a los bordes en móviles */
 }
 
 .modal-content {
-  background: white;
+  background-color: var(--surface-dark); /* Fondo de tarjeta oscuro */
   padding: 25px;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
   position: relative;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 1px solid var(--primary-gold); /* Un borde dorado le da un toque premium */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
 }
 
 .close-button {
@@ -29,44 +33,72 @@
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color: #666;
+  color: var(--text-secondary); /* Color de texto secundario */
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: var(--text-light); /* Se ilumina al pasar el mouse */
 }
 
 .modal-content h2 {
-    margin-top: 0;
+  margin-top: 0;
+  color: var(--primary-gold); /* Título del modal en dorado */
+}
+
+.modal-content p {
+  color: var(--text-secondary); /* Texto de párrafo más sutil */
+}
+
+.modal-content p strong {
+    color: var(--text-light); /* Resaltamos los números de boleto */
 }
 
 .form-group {
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: 500;
+  color: var(--text-light);
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
-  box-sizing: border-box; /* Importante para que el padding no afecte el ancho */
+  box-sizing: border-box;
+  background-color: var(--background-dark); /* Fondo oscuro para el input */
+  color: var(--text-light); /* Texto claro al escribir */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-gold); /* Borde dorado al hacer foco */
+  box-shadow: 0 0 10px rgba(255, 180, 0, 0.3);
 }
 
 .book-button {
   width: 100%;
   padding: 12px;
-  background-color: #007bff; /* Azul primario */
+  background-color: var(--primary-red); /* Botón en rojo, consistente con el de "Continuar" */
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
+  text-transform: uppercase;
 }
 
 .book-button:hover {
-  background-color: #0056b3;
+  background-color: #c82333;
+  transform: scale(1.02);
 }
