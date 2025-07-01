@@ -1,30 +1,102 @@
-/* src/components/Header.css */
+/* src/components/Header.css (Versión Final) */
 
 .app-header {
-  /* Usamos el color de fondo principal */
-  background-color: var(--background-dark); 
-  padding: 15px 20px;
-  text-align: center;
-  /* Un borde inferior sutil para separarlo del contenido */
-  border-bottom: 1px solid var(--border-color); 
+  background-color: var(--background-dark);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
-  box-sizing: border-box;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- LOGO Y TÍTULO --- */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
 .logo {
-  max-width: 120px; /* Hacemos el logo un poco más pequeño para un look más limpio */
-  height: auto;
-  margin-bottom: 5px;
+  max-height: 50px;
+  width: auto;
+  display: block;
 }
 
-/* Nota sobre el logo: Como tu imagen de logo tiene un fondo blanco, 
-   lo ideal sería editar la imagen para que tenga fondo transparente. 
-   Así se integrará perfectamente con cualquier color de fondo. */
-
-.app-header h1 {
-  /* Estilo para el título "Rifas El Wino" */
+.logo-link h1 {
   margin: 0;
-  font-size: 1.5rem;
-  color: var(--text-light); /* Texto en color claro */
-  letter-spacing: 2px;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  letter-spacing: 1px;
+}
+
+/* --- BOTÓN DE PAGOS (ESCRITORIO) --- */
+.payment-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-gold);
+  color: var(--background-dark);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  transition: transform 0.2s, background-color 0.2s;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.payment-button:hover {
+  transform: scale(1.05);
+  background-color: #ffc107;
+}
+
+.payment-icon {
+  font-size: 1.2rem;
+}
+
+
+/* --- DISEÑO RESPONSIVO PARA MÓVILES --- */
+@media (max-width: 768px) {
+  /* En pantallas medianas, escondemos el título para dar más espacio */
+  .logo-link h1 {
+    display: none;
+  }
+}
+
+/* --- ESTA SECCIÓN CONTIENE LOS CAMBIOS IMPORTANTES --- */
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0 15px; /* Menos padding en móviles */
+  }
+
+  .logo {
+    max-height: 45px; /* Logo un poco más pequeño para dar espacio */
+  }
+  
+  /* --- AJUSTES AL BOTÓN PARA MÓVIL --- */
+  .payment-button {
+    /* Mantenemos el botón rectangular y con texto */
+    padding: 8px 10px; /* Reducimos el padding para hacerlo más compacto */
+    font-size: 0.75rem; /* Reducimos el tamaño de la fuente */
+    gap: 5px; /* Reducimos el espacio entre el ícono y el texto */
+  }
+
+  .payment-icon {
+    font-size: 1rem; /* Ajustamos el tamaño del ícono */
+  }
+  
+  /* Ya NO necesitamos ocultar el texto, así que hemos eliminado .payment-text { display: none; } */
 }

@@ -1,0 +1,129 @@
+/* src/pages/PaymentPage.css (Versión 100% Responsiva) */
+
+.payment-page {
+  max-width: 900px;
+  margin: 20px auto; /* Reducimos el margen superior */
+  padding: 20px;
+  color: var(--text-light);
+}
+
+.payment-page h1 {
+  color: var(--primary-gold);
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2rem; /* Tamaño base para el título */
+}
+
+.payment-instructions {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+.accounts-container {
+  display: grid;
+  gap: 30px;
+}
+
+.account-card {
+  background-color: var(--surface-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 25px;
+  transition: transform 0.3s;
+}
+
+.account-card:hover {
+  transform: translateY(-5px);
+}
+
+.account-card h3 {
+  margin: 0 0 5px 0;
+  color: var(--primary-gold);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.beneficiary {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* --- ESTA ES LA SECCIÓN CLAVE PARA ESCRITORIO --- */
+.account-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-dark);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+.account-detail label {
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.account-detail span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  word-break: break-all; /* Evita desbordamiento si el número es muy largo */
+  padding: 0 10px;
+}
+
+.account-detail button {
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: 80px; /* Para que el botón no cambie de tamaño al decir "Copiado!" */
+  transition: background-color 0.2s;
+}
+
+.account-detail button:hover {
+  background-color: #c82333;
+}
+
+
+/* --- AQUÍ COMIENZA LA MAGIA PARA MÓVILES --- */
+@media (max-width: 768px) {
+
+  .payment-page h1 {
+    font-size: 1.8rem; /* Título un poco más pequeño */
+  }
+
+  .payment-instructions {
+    font-size: 1rem; /* Instrucciones un poco más pequeñas */
+  }
+
+  .account-card {
+    padding: 20px; /* Menos padding dentro de las tarjetas */
+  }
+
+  .account-detail {
+    flex-direction: column; /* ¡Apilamos los elementos en una columna! */
+    align-items: flex-start; /* Alineamos todo a la izquierda */
+    gap: 10px; /* Espacio entre los elementos apilados */
+  }
+
+  .account-detail span {
+    font-size: 1rem;
+    padding: 0;
+    align-self: center; /* Centramos el número de cuenta para mejor visualización */
+  }
+
+  .account-detail button {
+    width: 100%; /* El botón ahora ocupa todo el ancho, fácil de tocar */
+    padding: 12px; /* Hacemos el botón más alto */
+    font-size: 1rem;
+  }
+}
