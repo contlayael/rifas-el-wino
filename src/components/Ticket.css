@@ -47,6 +47,19 @@
   cursor: not-allowed;
   text-decoration: line-through; /* Texto tachado para indicar que no está disponible */
 }
+/* ... (junto a tus otras clases de estado como .sold) ... */
+
+.ticket.pending {
+  background-color: var(--primary-gold);
+  color: var(--background-dark);
+  border-color: #ffc107;
+  cursor: not-allowed;
+}
+
+.ticket.pending:hover {
+  transform: none;
+  background-color: var(--primary-gold);
+}
 /* ... (después de la clase .ticket.sold) ... */
 .ticket.pending {
   background-color: var(--primary-gold);
