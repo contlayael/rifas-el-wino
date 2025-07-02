@@ -78,7 +78,7 @@ function PaymentPage() {
 
       {/* --- NOTA IMPORTANTE AÑADIDA --- */}
       <div className="important-note">
-        ❗ AL REALIZAR TU PAGO, MANDA UNA FOTO O CAPTURA DE PANTALLA DE TU COMPROBANTE POR WHATSAPP PARA CONFIRMAR TU COMPRA ❗
+        ❗ AL REALIZAR TU PAGO, MANDA UNA FOTO O CAPTURA DE PANTALLA DE TU COMPROBANTE POR WHATSAPP AL NÚMERO 5647714203 PARA CONFIRMAR TU COMPRA ❗
       </div>
 
       <div className="accounts-container">

@@ -1,8 +1,9 @@
 .ticket-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  gap: 10px;
+  /* Crea columnas automáticas que tengan un mínimo de 100px de ancho */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
   padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 20px auto 0 auto; /* Añade un margen superior */
 }

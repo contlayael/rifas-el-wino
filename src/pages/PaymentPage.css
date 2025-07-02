@@ -1,8 +1,8 @@
-/* src/pages/PaymentPage.css (Versión 100% Responsiva) */
+/* src/pages/PaymentPage.css (Versión corregida) */
 
 .payment-page {
   max-width: 900px;
-  margin: 20px auto; /* Reducimos el margen superior */
+  margin: 20px auto;
   padding: 20px;
   color: var(--text-light);
 }
@@ -11,7 +11,7 @@
   color: var(--primary-gold);
   text-align: center;
   margin-bottom: 15px;
-  font-size: 2rem; /* Tamaño base para el título */
+  font-size: 2rem;
 }
 
 .payment-instructions {
@@ -20,6 +20,18 @@
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto 40px auto;
+}
+
+.important-note {
+  background-color: var(--primary-gold);
+  color: var(--background-dark);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 30px 0;
+  line-height: 1.5;
 }
 
 .accounts-container {
@@ -53,7 +65,7 @@
   margin-bottom: 20px;
 }
 
-/* --- ESTA ES LA SECCIÓN CLAVE PARA ESCRITORIO --- */
+/* --- Estilos para la fila de un detalle de cuenta --- */
 .account-detail {
   display: flex;
   justify-content: space-between;
@@ -62,6 +74,13 @@
   border-radius: 8px;
   padding: 10px 15px;
   margin-bottom: 10px;
+}
+
+/* Contenedor para la etiqueta y el número, para alinearlos verticalmente */
+.account-detail div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .account-detail label {
@@ -85,7 +104,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  min-width: 80px; /* Para que el botón no cambie de tamaño al decir "Copiado!" */
+  min-width: 80px;
   transition: background-color 0.2s;
 }
 
@@ -94,57 +113,38 @@
 }
 
 
-/* --- AQUÍ COMIENZA LA MAGIA PARA MÓVILES --- */
+/* --- SECCIÓN RESPONSIVA PARA MÓVILES --- */
 @media (max-width: 768px) {
 
   .payment-page h1 {
-    font-size: 1.8rem; /* Título un poco más pequeño */
+    font-size: 1.8rem;
   }
 
   .payment-instructions {
-    font-size: 1rem; /* Instrucciones un poco más pequeñas */
+    font-size: 1rem;
   }
 
   .account-card {
-    padding: 20px; /* Menos padding dentro de las tarjetas */
+    padding: 20px;
   }
 
   .account-detail {
-    flex-direction: column; /* ¡Apilamos los elementos en una columna! */
+    flex-direction: column; /* Apilamos los elementos en una columna */
     align-items: flex-start; /* Alineamos todo a la izquierda */
     gap: 10px; /* Espacio entre los elementos apilados */
   }
 
+  /* REGLA CORREGIDA Y UNIFICADA PARA EL SPAN */
   .account-detail span {
     font-size: 1rem;
-    padding: 0;
-    align-self: center; /* Centramos el número de cuenta para mejor visualización */
+    padding: 5px 0;
+    width: 100%;       /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centra el texto dentro de su espacio */
   }
 
   .account-detail button {
     width: 100%; /* El botón ahora ocupa todo el ancho, fácil de tocar */
-    padding: 12px; /* Hacemos el botón más alto */
+    padding: 12px;
     font-size: 1rem;
   }
-}
-
-/* ... (agrega esto al final de PaymentPage.css) ... */
-
-.important-note {
-  background-color: var(--primary-gold);
-  color: var(--background-dark);
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin: 30px 0;
-  line-height: 1.5;
-}
-
-/* Pequeño ajuste para que la etiqueta y el número no se peguen al botón */
-.account-detail div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }

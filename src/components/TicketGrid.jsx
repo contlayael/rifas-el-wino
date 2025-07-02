@@ -1,19 +1,14 @@
 import React from 'react';
 import Ticket from './Ticket';
-import './TicketGrid.css';
+import './TicketGrid.css'; // Importa el archivo CSS que crearemos
 
 function TicketGrid({ tickets, selectedTickets, onTicketSelect }) {
-  // Si no hay boletos, muestra un mensaje o nada.
-  if (!tickets || tickets.length === 0) {
-    return <p>No hay boletos para mostrar en esta página.</p>;
-  }
-
   return (
     <div className="ticket-grid">
       {tickets.map(ticket => (
         <Ticket
           key={ticket.id}
-          ticket={ticket} // Pasamos el objeto completo del boleto
+          ticket={ticket}
           isSelected={selectedTickets.includes(ticket.number)}
           onSelect={onTicketSelect}
         />
