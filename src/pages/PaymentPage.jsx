@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
 import './PaymentPage.css';
 
-// Puedes añadir más cuentas aquí si lo necesitas
+// --- DATOS DE CUENTAS ACTUALIZADOS ---
 const accounts = [
   {
-    bankName: 'BBVA Bancomer',
-    accountNumber: '1234567890123456',
-    clabe: '012345678901234567',
-    beneficiary: 'El Wino de las Rifas S.A. de C.V.'
+    bankName: 'Banco Azteca (Opción 1)',
+    accountNumber: '5263 5401 5714 6750',
+    clabe: '1271 8001 3593 048194',
+    beneficiary: 'Edwin Adair Sandoval Navarrete' // <-- CAMBIA ESTE NOMBRE
   },
   {
-    bankName: 'Spin by OXXO',
-    accountNumber: '9876543210987654',
-    clabe: '012345678901234568',
-    beneficiary: 'El Wino de las Rifas'
+    bankName: 'Banco Azteca (Opción 2)',
+    accountNumber: '5343 8102 1122 6201',
+    clabe: '1271 8000 1810 224072',
+    beneficiary: 'Edwin Adair Sandoval Navarrete' // <-- CAMBIA ESTE NOMBRE
+  },
+  {
+    bankName: 'Coppel (BanCoppel)',
+    accountNumber: '4169 1614 8011 1490',
+    clabe: '1371 8010 5195 227004',
+    beneficiary: 'Edwin Adair Sandoval Navarrete' // <-- CAMBIA ESTE NOMBRE
+  },
+  {
+    bankName: 'Banamex (Citibanamex)',
+    accountNumber: '5204 1662 0727 3790',
+    clabe: '0024 4370 2166 462050',
+    beneficiary: 'Edwin Adair Sandoval Navarreter' // <-- CAMBIA ESTE NOMBRE
   }
 ];
 
-// Componente para una sola tarjeta de cuenta
+// Componente para una sola tarjeta de cuenta (sin cambios)
 const AccountCard = ({ account }) => {
   const [copiedValue, setCopiedValue] = useState(null);
 
   const handleCopy = (value, type) => {
-    navigator.clipboard.writeText(value);
+    // Quita los espacios para copiar solo los números
+    const cleanValue = value.replace(/\s/g, '');
+    navigator.clipboard.writeText(cleanValue);
     setCopiedValue(type);
-    setTimeout(() => setCopiedValue(null), 2000); // El texto "Copiado!" desaparecerá después de 2 segundos
+    setTimeout(() => setCopiedValue(null), 2000);
   };
 
   return (
@@ -32,15 +46,19 @@ const AccountCard = ({ account }) => {
       <h3>{account.bankName}</h3>
       <p className="beneficiary">A nombre de: {account.beneficiary}</p>
       <div className="account-detail">
-        <label>Número de Tarjeta</label>
-        <span>{account.accountNumber}</span>
+        <div>
+            <label>Número de Tarjeta</label>
+            <span>{account.accountNumber}</span>
+        </div>
         <button onClick={() => handleCopy(account.accountNumber, 'account')}>
           {copiedValue === 'account' ? '¡Copiado!' : 'Copiar'}
         </button>
       </div>
       <div className="account-detail">
-        <label>CLABE Interbancaria</label>
-        <span>{account.clabe}</span>
+        <div>
+            <label>CLABE Interbancaria</label>
+            <span>{account.clabe}</span>
+        </div>
         <button onClick={() => handleCopy(account.clabe, 'clabe')}>
           {copiedValue === 'clabe' ? '¡Copiado!' : 'Copiar'}
         </button>
@@ -55,8 +73,14 @@ function PaymentPage() {
     <div className="payment-page">
       <h1>Cuentas para Realizar tu Pago</h1>
       <p className="payment-instructions">
-        Realiza tu transferencia a cualquiera de las siguientes cuentas. Una vez hecho, no olvides enviar tu comprobante por WhatsApp.
+        Realiza tu transferencia o depósito a cualquiera de las siguientes cuentas.
       </p>
+
+      {/* --- NOTA IMPORTANTE AÑADIDA --- */}
+      <div className="important-note">
+        ❗ AL REALIZAR TU PAGO, MANDA UNA FOTO O CAPTURA DE PANTALLA DE TU COMPROBANTE POR WHATSAPP PARA CONFIRMAR TU COMPRA ❗
+      </div>
+
       <div className="accounts-container">
         {accounts.map((acc, index) => (
           <AccountCard key={index} account={acc} />

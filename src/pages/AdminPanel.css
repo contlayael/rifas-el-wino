@@ -1,0 +1,109 @@
+/* src/pages/AdminPanel.css */
+.login-container, .admin-panel { max-width: 800px; margin: 40px auto; padding: 20px; background-color: var(--surface-dark); border-radius: 8px; }
+.login-container form { display: flex; flex-direction: column; gap: 15px; }
+.login-container input { padding: 12px; border-radius: 5px; border: 1px solid var(--border-color); background-color: var(--background-dark); color: var(--text-light); }
+.login-container button { padding: 12px; background-color: var(--primary-red); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.error-message { color: var(--primary-red); text-align: center; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }
+.logout-button { background-color: transparent; border: 1px solid var(--primary-red); color: var(--primary-red); padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+.admin-form-container form { display: flex; flex-direction: column; gap: 15px; margin-top: 10px; }
+.admin-form-container input, .admin-form-container textarea { width: 100%; padding: 12px; border-radius: 5px; border: 1px solid var(--border-color); background-color: var(--background-dark); color: var(--text-light); font-family: 'Roboto', sans-serif; box-sizing: border-box; }
+.admin-form-container textarea { resize: vertical; }
+.admin-form-container button { padding: 12px; background-color: var(--primary-gold); color: var(--background-dark); border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.admin-form-container button:disabled { background-color: #555; cursor: not-allowed; }
+
+/* --- ESTILOS PARA LA TABLA DE VENTAS --- */
+
+.sales-table-container {
+  margin-top: 40px;
+  background-color: var(--background-dark);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.sales-table-container h3 {
+  color: var(--primary-gold);
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+thead {
+  background-color: var(--surface-dark);
+}
+
+th {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+tbody tr:hover {
+  background-color: var(--surface-dark);
+}
+
+td {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+td:first-child {
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.release-button {
+  background-color: transparent;
+  border: 1px solid #6c757d;
+  color: #6c757d;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.release-button:hover {
+  background-color: #ad3128;
+  color: white;
+}
+
+/* --- ESTILOS PARA LAS PESTAÑAS --- */
+
+.tab-container {
+  margin-top: 40px;
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tab-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  bottom: -2px; /* Para que el borde activo cubra el borde del contenedor */
+}
+
+.tab-button.active {
+  color: var(--primary-gold);
+  border-bottom: 2px solid var(--primary-gold);
+}

@@ -127,3 +127,24 @@
     font-size: 1rem;
   }
 }
+
+/* ... (agrega esto al final de PaymentPage.css) ... */
+
+.important-note {
+  background-color: var(--primary-gold);
+  color: var(--background-dark);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 30px 0;
+  line-height: 1.5;
+}
+
+/* Pequeño ajuste para que la etiqueta y el número no se peguen al botón */
+.account-detail div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

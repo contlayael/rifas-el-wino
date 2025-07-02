@@ -72,3 +72,28 @@ main {
     background-color: #c82333;
     transform: scale(1.02); /* Pequeño efecto de crecimiento al pasar el mouse */
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.pagination button {
+  padding: 8px 15px;
+  background-color: var(--primary-gold);
+  color: var(--background-dark);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.pagination button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+.pagination span {
+  font-weight: bold;
+  color: var(--text-light);
+}

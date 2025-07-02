@@ -2,16 +2,19 @@ import React from 'react';
 import Ticket from './Ticket';
 import './TicketGrid.css';
 
-function TicketGrid({ totalTickets, selectedTickets, onTicketSelect }) {
-  const tickets = Array.from({ length: totalTickets }, (_, i) => i + 1);
+function TicketGrid({ tickets, selectedTickets, onTicketSelect }) {
+  // Si no hay boletos, muestra un mensaje o nada.
+  if (!tickets || tickets.length === 0) {
+    return <p>No hay boletos para mostrar en esta página.</p>;
+  }
 
   return (
     <div className="ticket-grid">
-      {tickets.map(number => (
+      {tickets.map(ticket => (
         <Ticket
-          key={number}
-          number={number}
-          isSelected={selectedTickets.includes(number)}
+          key={ticket.id}
+          ticket={ticket} // Pasamos el objeto completo del boleto
+          isSelected={selectedTickets.includes(ticket.number)}
           onSelect={onTicketSelect}
         />
       ))}
