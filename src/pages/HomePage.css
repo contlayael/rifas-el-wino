@@ -60,3 +60,66 @@
     transform: rotate(360deg);
   }
 }
+
+/* --- ESTILOS PARA EL BUSCADOR DE BOLETOS --- */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto 30px auto;
+  max-width: 500px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--surface-dark);
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 12px 20px;
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.search-result-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* ESTA ES LA REGLA CORREGIDA Y MÁS IMPORTANTE */
+.search-result-container .ticket-grid {
+  display: grid;
+  justify-content: center; /* Centra la cuadrícula horizontalmente */
+  /* Forzamos a que solo haya una columna del tamaño del boleto */
+  grid-template-columns: max-content; 
+}
+
+.clear-search-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--primary-gold);
+  color: var(--background-dark);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-result-container .ticket-grid {
+  justify-content: center; /* Centra el boleto cuando solo hay un resultado */
+}
