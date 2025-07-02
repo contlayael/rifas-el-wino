@@ -20,8 +20,10 @@ import BookingModal from "../components/BookingModal";
 import Legend from "../components/Legend";
 import "./HomePage.css";
 
-const TICKETS_PER_ROW = 5;
-const TICKET_SIZE = 120;
+// --- AJUSTES DE TAMAÑO Y COLUMNAS ---
+const TICKET_SIZE = 80; // Reducimos el tamaño de cada "caja" de boleto
+const TICKETS_PER_ROW_DESKTOP = 7; // Aumentamos las columnas en escritorio
+const TICKETS_PER_ROW_MOBILE = 4; // Mantenemos 4 en móvil para que no se vea muy apretado
 
 function HomePage() {
   const [allTickets, setAllTickets] = useState([]);
@@ -30,7 +32,8 @@ function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const ticketsPerRow = windowWidth < 640 ? 4 : 5;
+ // Lógica para hacer las columnas dinámicas
+  const ticketsPerRow = windowWidth < 768 ? TICKETS_PER_ROW_MOBILE : TICKETS_PER_ROW_DESKTOP;
 
   // --- LÓGICA COMPLETA DE SELECCIÓN Y APARTADO ---
   const handleTicketSelect = useCallback(
@@ -123,10 +126,10 @@ function HomePage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // --- COMPONENTE "ROW" PARA LA LISTA VIRTUALIZADA ---
+    // --- Componente "Row" para la lista virtualizada (AJUSTADO) ---
   const Row = ({ index, style }) => {
     const ticketsInRow = [];
-    const startIndex = index * ticketsPerRow;
+    const startIndex = index * ticketsPerRow; // Usa la variable dinámica
     for (let i = 0; i < ticketsPerRow; i++) {
       const ticketIndex = startIndex + i;
       if (ticketIndex < allTickets.length) {

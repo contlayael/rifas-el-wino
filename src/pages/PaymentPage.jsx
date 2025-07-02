@@ -89,7 +89,7 @@ function PaymentPage() {
           rel="noopener noreferrer"
           className="whatsapp-link"
         >
-          📞 Enviar Comprobante al 56-4771-4203
+          📞 Enviar Comprobante al <br /> 56-4771-4203
         </a>
       </div>
 

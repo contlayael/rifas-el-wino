@@ -24,12 +24,11 @@
 .ticket-row {
   display: flex !important; /* Es importante usar !important para sobreescribir los estilos de la librería */
   justify-content: center;
-  gap: 20px;
+  gap: 10px; /* Reducimos el espacio entre boletos */
   box-sizing: border-box;
-  padding: 10px;
+  padding: 5px; /* Reducimos el padding de la fila */
 }
 
-/* ... (agrega esto al final de HomePage.css) ... */
 
 .spinner-container {
   display: flex;

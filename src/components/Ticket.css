@@ -1,7 +1,7 @@
 .ticket {
-  /* Tamaño fijo para cada boleto */
-  width: 100px;
-  height: 100px;
+  /* Tamaño fijo más pequeño para cada boleto */
+  width: 75px;
+  height: 75px;
   
   /* Centrado del contenido */
   display: flex;
@@ -14,7 +14,7 @@
   color: var(--text-light);
   border-radius: 8px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem; /* Letra un poco más pequeña */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
   user-select: none;
