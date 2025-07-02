@@ -28,3 +28,36 @@
   box-sizing: border-box;
   padding: 10px;
 }
+
+/* ... (agrega esto al final de HomePage.css) ... */
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px; /* Misma altura que la lista virtualizada */
+  gap: 20px;
+}
+
+.spinner-container p {
+  color: var(--primary-gold);
+  font-weight: bold;
+}
+
+/* ... (agrega esto al final de HomePage.css) ... */
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--surface-dark);
+  border-top-color: var(--primary-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

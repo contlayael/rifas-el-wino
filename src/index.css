@@ -19,6 +19,8 @@ body {
   background-color: var(--background-dark); /* Usamos nuestra variable de fondo */
   color: var(--text-light); /* Usamos nuestra variable de texto principal */
   transition: background-color 0.3s ease;
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Un espacio para que el header fijo no tape el título */
 }
 
 /* 4. Damos un estilo base a los títulos para que usen la fuente de impacto */
