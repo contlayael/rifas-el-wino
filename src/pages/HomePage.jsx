@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { collection, query, onSnapshot, orderBy, getDocs, limit, writeBatch, doc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
+import { db } from '../firebaseConfig.js';
 import { FixedSizeList as List } from 'react-window';
 import Legend from '../components/Legend'; // <-- 1. Importa el componente
 
